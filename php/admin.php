@@ -18,57 +18,36 @@ $datecCreated= $_SESSION['date_create'];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./admin.css">
     <title>Document</title>
-    <style>
+  
 
-        div {
-            position:absolute;
-            top: 40%;
-            left: 32%;
-        }
-    table{
-        border: 3px solid  #5a54ff;
-        text-align: center;
-
-     }
-
-     tr , td {
-        border: 3px solid  #5a54ff;
-     }
-    </style>
+   
 <body>
-    <div>
-    <table>
-        <tr>
-            <th>
-                ID
-            </th>
-            <th>
-                Name
-            </th>
-            <th>
-                Email
-            </th>
-            <th>
-                Password
-            </th>
-            <th>
-                Date created
-            </th>
-            <th> 
-                Last login
-            </th>
-        </tr>
-        <tr>
-            <td></td>
-            <td><?php echo $fname." ".$faname ?></td>
-            <td><?php echo $email ?></td>
-            <td><?php echo $pass ?></td>
-            <td><?php echo $datecCreated ?></td>
-            <td><?php echo $_COOKIE['FirstName'];?></td>
+   
+<h1> Admin Information </h1>
+<table id="data">
 
-        </tr>
-    </table>
-</div>
+  <tr>
+    <th>ID</th>
+    <th> Name</th>
+    <th> Email</th>
+    <th>Password</th>
+    <th>Date created</th>
+    <th>Last login</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td><?php echo $fname." ".$faname ?></td>
+    <td><?php echo $email ?></td>
+    <td> <?php echo $pass ?></td>
+    <td><?php echo $datecCreated ?></td>
+    <td><?php echo $_COOKIE['FirstName'];?></td>
+    
+    
+  </tr>
+
+ 
+</table>
 </body>
 </html>

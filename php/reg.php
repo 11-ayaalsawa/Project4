@@ -3,17 +3,6 @@
   session_start();
 
 
- $fname= $_POST['firstname'];
- $mname= $_POST['middlename'];
- $lname= $_POST['lastname'];
- $faname= $_POST['familyname'];
- $email= $_POST['email'];
- $phone= $_POST['phonenumber'];
- $pass= $_POST['password'];
- $cpass= $_POST['cpassword'];
- $date= $_POST['dateofbirth'];
- 
- 
  
  if(isset($_POST['submit'])){
  
@@ -23,17 +12,17 @@
 
  /////////////////////////////////////////////////////
     
-//  $_SESSION['firstname']= $_POST['firstname'];
-//  $_SESSION['middlename']= $_POST['middlename'];
-//  $_SESSION['lastname']= $_POST['lastname'];
-//  $_SESSION['familyname']= $_POST['familyname'];
-//  $_SESSION['email']= $_POST['email'];
-//  $_SESSION['phonenumber']= $_POST['phonenumber'];
-//  $_SESSION['password']= $_POST['password'];
-//  $_SESSION['cpassword']= $_POST['cpassword'];
-//  $_SESSION['dateofbirth']= $_POST['dateofbirth'];
- 
 
+
+$fname= $_POST['firstname'];
+$mname= $_POST['middlename'];
+$lname= $_POST['lastname'];
+$faname= $_POST['familyname'];
+$email= $_POST['email'];
+$phone= $_POST['phonenumber'];
+$pass= $_POST['password'];
+$cpass= $_POST['cpassword'];
+$date= $_POST['dateofbirth'];
 
 
  
@@ -41,22 +30,22 @@
  ////////////////////////////////////////////////////////
  if (preg_match('/[A-Za-z][A-Za-z]/', $fname)) {
 
-    $firstName_result="";
-    $firstName_correct=true;
+    $fnameERR="";
+    $fname_correct=true;
        
 } else {
-    $firstName_result="Required only characters";
-    $firstName_correct=false;
+    $fnameERR="Required only characters";
+    $fname_correct=false;
 }
   /////////////////////////////////////////////////
   if (preg_match('/[A-Za-z][A-Za-z]/', $mname)) {
 
-    $middleName_result=" ";
-    $middleName_correct=true;
+    $mnameERR=" ";
+    $mname_correct=true;
        
 } else {
-    $middleName_result="Required only characters";
-        $middleName_correct=false;
+    $mnameERR="Required only characters";
+    $mname_correct=false;
 }
 
 //////////////////////////////////////////////////
@@ -162,7 +151,7 @@ else{
 ////////////////////////////////////////////////////
 
 if(
-    $firstName_correct && $middleName_correct && $lastName_correct && $familyName_correct && $email_correct && $confirmPassword_correct && $confirmPhone_correct && $confirmDob_correct
+    $fname_correct && $mname_correct && $lastName_correct && $familyName_correct && $email_correct && $confirmPassword_correct && $confirmPhone_correct && $confirmDob_correct
 ){
     $_SESSION['firstname']= $_POST['firstname'];
     $_SESSION['middlename']= $_POST['middlename'];
@@ -215,12 +204,12 @@ if(
                 <div class="inputs">
                     <label for="firstname">First Name</label> <br>
                     <input type="text" name="firstname" required>
-                      <span id="s1"> <?php if(isset($firstName_result)){echo $firstName_result;}?></span> </div>
+                      <span id="s1"> <?php if(isset( $fnameERR)){echo  $fnameERR;}?></span> </div>
                   
                     <div class="inputs">
                         <label for="middlename">Middle Name</label> <br>
                         <input type="text" name="middlename" required>
-                        <span id="s2"><?php if(isset($middleName_result)){echo $middleName_result;}?></span> </div> 
+                        <span id="s2"><?php if(isset($mnameERR)){echo $mnameERR;}?></span> </div> 
                 <div class="inputs">
                     <label for="lastname">Last Name</label> <br>
                     <input type="text" name="lastname" required> 

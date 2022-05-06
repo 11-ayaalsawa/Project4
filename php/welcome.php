@@ -19,27 +19,29 @@ $phone=$_SESSION['phonenumber'];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,400" rel="stylesheet">
+    <link rel="stylesheet" href="./welcome.css">
     <title>Document</title>
-    <style>
-        div {
-            width: 40%;
-   height: 40%;
-   margin: auto;
-   margin-top:15%;
-   border:3px solid black;
-   padding-left:20px
   
-         
-        }
-
-        
-     </style>
 </head>
 <body>
-    <div>
-    <h1>Welcome <?php echo $fname. " ". $mname ." ". $lname ." " . $faname?>!</h1>
-    <h2>Your Email is : <?php echo $email ?></h2>
-    <h2> Your Phone Number is: <?php echo $phone?> </h2>
+ 
+
+
+  
+
+    
+    
+    <div class="content">
+      <h1>Welcome <?php echo $fname. " ". $mname ." ". $lname ." " . $faname?>!</h1>
+      <h2>Your Email is : <?php echo $email ?></h2>
+      <br>
+      <h2> Your Phone Number is: <?php echo $phone?> </h2>
+     
     </div>
+    
+  </body>
+  
+</html> 
 </body>
 </html>
