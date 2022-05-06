@@ -1,0 +1,138 @@
+<?php 
+ 
+
+//  $info=array();
+
+
+
+
+if(isset($_POST['submit'])){
+
+session_start();
+  
+   
+    $fname= $_POST['firstname'];
+    $mname= $_POST['middlename'];
+    $lname= $_POST['lastname'];
+    $faname= $_POST['familyname'];
+    $email= $_POST['email'];
+    $phone= $_POST['phonenumber'];
+    $pass= $_POST['password'];
+    $cpass= $_POST['cpassword'];
+    $date= $_POST['dateofbirth'];
+/////////////////////////////////////////////////////
+   
+$_SESSION['firstname']= $_POST['firstname'];
+$_SESSION['middlename']= $_POST['middlename'];
+$_SESSION['lastname']= $_POST['lastname'];
+$_SESSION['familyname']= $_POST['familyname'];
+$_SESSION['email']= $_POST['email'];
+$_SESSION['phonenumber']= $_POST['phonenumber'];
+$_SESSION['password']= $_POST['password'];
+$_SESSION['cpassword']= $_POST['cpassword'];
+$_SESSION['dateofbirth']= $_POST['dateofbirth'];
+
+
+
+
+
+    // header('location:index2.php');
+
+    // array_push($info, $fname,$mname,$lname,$faname,$email,$phone,$pass,$cpass,$date);
+
+
+    // if(preg_match((?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$), $_POST['password']):
+
+
+
+
+//////////////////////////////functions ////////////////////
+
+// echo (check_fname($fname)) ;
+
+// echo(check_fname($mname)) ;
+
+// echo(check_fname($lname)) ;
+
+// echo(check_fname($faname)) ;
+
+// echo (check_email($email));
+
+// echo (check_number( $phone));
+
+// echo (check_password($pass));
+
+// echo (check_confirm($cpass,$pass));
+ 
+}
+
+// print_r($info);
+
+
+   //////////////////////////check full name////////////////////
+   function check_fname($fname){
+    if (preg_match('/[A-Za-z][A-Za-z]/', $fname)) {
+      
+     } else {
+        echo "Required only characters";
+     }
+};
+////////////////////////check email /////////////////////////
+function check_email($email){
+if (preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/', $email)) {
+   
+   } else { 
+    echo  " Invalid email";
+   }   
+};
+
+///////////////////////check phone number ///////////////////
+function check_number($phone){
+    if(preg_match("/^[0-9]{3}-[0-9]{3}-[0-9]{4}-[0-9]{4}$/", $phone)) {
+        // $phone is valid
+      }else{
+          echo "Should be 14 digits";
+      }
+    };
+ 
+////////////////////////check password //////////////////
+
+function check_password($pass){
+    $regex='/^(?=.*[a-z])(?=.*[A-Z])(?=(.*[\d]){2,})[A-Za-z\d?]{8,32}$/';
+    $num='/[\d]{2,}/';
+    $capital='/[A-Z]/';
+    $symboles='/[#$@!%&*?]/';
+    
+
+    if (preg_match($regex, $pass)) {
+        echo 'password syntax is Incorrect';
+       }
+        elseif(!preg_match($num, $pass)) { 
+        echo 'You password must contain 2 numbers at least';
+       } 
+       elseif(!preg_match($capital, $pass)) {
+           echo 'Incorrect! password must be capital.';
+       }
+       else if (!preg_match($symboles, $pass)){
+           echo 'You password must contain at least 1 symbole';
+       }
+
+};
+///////////////////////////check confirm password /////////////////////
+
+function check_confirm($cpass,$pass){
+  
+     if (($cpass)===($pass)){
+        
+        
+       
+        // header('location:index2.php');
+    }else{
+        echo `Passwords don't match`;
+    }
+
+};
+
+////////////////////////////////check the age /////////////////////////
+
+?>
