@@ -27,9 +27,8 @@ body {
 
 .signup {
     width: 45%;
-    /* display: inline; */
-    /* float: left; */
     margin: 25px auto;
+    
     
 }
 
@@ -37,33 +36,25 @@ body {
     background: white;
     border: 2px solid #f54e4e ;
     border-radius: 25px;
-    /* padding: 25px; */
     text-align: center;
+
     
     margin-top: 10%;
 }
 
 .signup input[type="text"], input[type="email"], input[type="tel"], input[type="password"], input[type="date"]{
-/* border: none; */
-/* border-bottom: 2px solid #5a4fcf; */
 border: 2px solid black;
 display: inline;
 outline: none;
 padding: 10px 0px 1px;
 margin: 10px auto 25px;
 width: 90%;
-/* color: #5a4fcf;; */
 color: rgba(0, 0, 0, 0.637);
 font-size: 20px;
 
 }
 
-/* .signup input:focus {
-outline: none; */
-/* color: #5a4fcf; */
-/* color: rgba(0, 0, 0, 0.637);
-background: white;
-}  */
+
 
 .signup input[type=submit]{
     border: none;
@@ -91,13 +82,13 @@ margin: 2px auto;
 }
 
 .signup label {
-    /* color: #5a4fcf; */
+ 
     color: rgba(0, 0, 0, 0.637);
     text-align: left;
 }
 
 .signup form h2 {
-    /* color: #5a4fcf; */
+
     color: rgba(0, 0, 0, 0.637);
     font-weight: bolder;
     margin: 10px 0px 20px;
@@ -128,7 +119,7 @@ margin: 2px auto;
     color: red;
     font-size:small;
     position:absolute;
-    top:37%;
+    top:27%;
     left:35%;
 }
 
@@ -136,7 +127,7 @@ margin: 2px auto;
     color: red;
     font-size:small;
     position:absolute;
-    top:37%;
+    top:27%;
     left:56%;
 }
 
@@ -144,7 +135,7 @@ margin: 2px auto;
     color: red;
     font-size:small;
     position:absolute;
-    top:52%;
+    top:40%;
     left:35%;
 
 }
@@ -153,7 +144,7 @@ margin: 2px auto;
     color: red;
     font-size:small;
     position:absolute;
-    top:52%;
+    top:40%;
     left:56%;
 }
 
@@ -161,7 +152,7 @@ margin: 2px auto;
     color: red;
     font-size:small;
     position:absolute;
-    top:66%;
+    top:50%;
     left:35%;
 }
 
@@ -169,7 +160,7 @@ margin: 2px auto;
     color: red;
     font-size:small;
     position:absolute;
-    top:66%;
+    top:50%;
     left:57%;
 }
 
@@ -177,7 +168,7 @@ margin: 2px auto;
     color: red;
     font-size:small;
     position:absolute;
-    top:81%;
+    top:67%;
     left:31%;
 }
 
@@ -185,7 +176,7 @@ margin: 2px auto;
     color: red;
     font-size:small;
     position:absolute;
-    top:81%;
+    top:67%;
     left: 56%;
 }
 
@@ -194,7 +185,7 @@ margin: 2px auto;
     color: red;
     font-size:small;
     position:absolute;
-    top:96%;
+    top:80%;
     left: 43%;
    
 }
@@ -205,8 +196,7 @@ margin: 2px auto;
    
    .signup {
    width: 90%;
-   /* display: inline; */
-   /* float: left; */
+
    margin: 25px auto;
    
 }
@@ -223,8 +213,7 @@ margin: 2px auto;
   
   .signup {
   width: 90%;
-  /* display: inline; */
-  /* float: left; */
+
   margin: 25px ;
   
 }
@@ -257,8 +246,7 @@ margin: 2px auto;
   
   .signup {
   width: 90%;
-  /* display: inline; */
-  /* float: left; */
+
   margin: 15px ;
   
 }

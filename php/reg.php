@@ -1,13 +1,17 @@
 
 <?php 
   session_start();
+  $_SESSION["usersData"];
+  if(empty($_SESSION["usersData"])){
+   $_SESSION["usersData"]= [];
+  }
 
 
  
  if(isset($_POST['submit'])){
  
 
-   
+
     
 
  /////////////////////////////////////////////////////
@@ -85,7 +89,7 @@ if (preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{
 }   
 /////////////////////////////////////////////////////
 
-if(preg_match( "/^\\(?([0-9]{3})\\)?[-.\\s]?([0-9]{3})[-.\\s]?([0-9]{4})?[-.\\s]?([0-9]{4})$/",$phone)){
+if(preg_match("/^\\(?([0-9]{3})\\)?[-.\\s]?([0-9]{3})[-.\\s]?([0-9]{4})?[-.\\s]?([0-9]{4})$/",$phone)){
     $phoneNumber_result="";
     $confirmPhone_correct=true;
 }
@@ -135,6 +139,7 @@ if (preg_match("/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/
     else{
         $password_match=false;
         $confirmPassword_result="Passwords don't match";
+        $confirmPassword_correct=false;
     }
     
 ///////////////////////////////////////////////////////////////////
@@ -153,19 +158,28 @@ else{
 if(
     $fname_correct && $mname_correct && $lastName_correct && $familyName_correct && $email_correct && $confirmPassword_correct && $confirmPhone_correct && $confirmDob_correct
 ){
-    $_SESSION['firstname']= $_POST['firstname'];
-    $_SESSION['middlename']= $_POST['middlename'];
-    $_SESSION['lastname']= $_POST['lastname'];
-    $_SESSION['familyname']= $_POST['familyname'];
-    $_SESSION['email']= $_POST['email'];
-    $_SESSION['phonenumber']= $_POST['phonenumber'];
-    $_SESSION['password']= $_POST['password'];
-    $_SESSION['cpassword']= $_POST['cpassword'];
-    $_SESSION['dateofbirth']= $_POST['dateofbirth'];
-    $_SESSION['date_create']=date("d-m-y"); 
+    // $_SESSION['firstname']= $_POST['firstname'];
+    // $_SESSION['middlename']= $_POST['middlename'];
+    // $_SESSION['lastname']= $_POST['lastname'];
+    // $_SESSION['familyname']= $_POST['familyname'];
+    // $_SESSION['email']= $_POST['email'];
+    // $_SESSION['phonenumber']= $_POST['phonenumber'];
+    // $_SESSION['password']= $_POST['password'];
+    // $_SESSION['cpassword']= $_POST['cpassword'];
+    // $_SESSION['dateofbirth']= $_POST['dateofbirth'];
+    // $_SESSION['date_create']=date("m/d/y H:ia");
+       $dateCreate=date("m/d/y H:ia");
+
+    $arr=['firstname'=> $fname, 'middlename'=> $mname, 'lastname'=> $lname, 'familyname'=>$faname, 'email'=>$email, 'phonenumber'=> $phone,'password'=>$pass, 'cpassword'=>$cpass,'dateofbirth'=>$date, 'date_create'=> $dateCreate, "Last-Login-Date" =>"haven't login yet"];
+    array_push($_SESSION["usersData"],$arr);
+    
     
 
     header('location:login.php');
+
+    ////////////////////////////////////////////
+  
+  
 }
  }
  
@@ -194,11 +208,15 @@ if(
     <link rel="stylesheet" href="signup.css">
 
 </head>
-
+<style>
+    .signup input[type="text"], input[type="email"], input[type="tel"], input[type="password"], input[type="date"]{
+        height: 35px;
+    }
+</style>
 <body>
     <div class="container">
-        <div class="signup">
-            <form method="post" action="">
+        <div class="signup" style="margin-top: -4%;">
+            <form method="post" action="" style="height:710px; ">
                 <h1> Sign Up </h1>
                 <h2> Create An Account, It's Free!</h2>
                 <div class="inputs">

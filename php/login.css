@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap');
 
 /* * {
-    box-sizing:border-box;
-    margin: 0px;
-    padding: 0px;
+
     font-family: Poppins;
     
 } */
@@ -25,8 +23,7 @@ body {
 
 .signup {
     width: 45%;
-    /* display: inline; */
-    /* float: left; */
+
     margin: 25px auto;
     
 }
@@ -42,8 +39,7 @@ body {
 }
 
 .signup input[type="email"], input[type="password"]{
-/* border: none; */
-/* border-bottom: 2px solid #5a4fcf; */
+
 border: 2px solid black;
 display: block;
 /* outline: none; */
@@ -57,12 +53,7 @@ padding-left: 10px;
 
 }
 
-/* .signup input:focus {
-outline: none; */
-/* color: #5a4fcf; */
-/* color: rgba(0, 0, 0, 0.637);
-background: white;
-}  */
+
 
 .signup input[type=submit]{
     border: none;
@@ -90,14 +81,14 @@ margin: 2px auto;
 }
 
 .signup label {
-    /* color: #5a4fcf; */
+   
     color: rgba(0, 0, 0, 0.637);
     /* text-align: left; */
     
 }
 
 .signup form h2 {
-    /* color: #5a4fcf; */
+  
     color: rgba(0, 0, 0, 0.637);
     font-weight: bolder;
     margin: 10px 0px 20px;

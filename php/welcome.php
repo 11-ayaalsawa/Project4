@@ -1,12 +1,12 @@
 <?php
 
 session_start();
-$fname=$_SESSION['firstname'];
-$mname=$_SESSION['middlename'];
-$lname=$_SESSION['lastname'];
-$faname=$_SESSION['familyname'];
-$email=$_SESSION['email'];
-$phone=$_SESSION['phonenumber'];
+// $fname=$_SESSION['firstname'];
+// $mname=$_SESSION['middlename'];
+// $lname=$_SESSION['lastname'];
+// $faname=$_SESSION['familyname'];
+// $email=$_SESSION['email'];
+// $phone=$_SESSION['phonenumber'];
 
 
 
@@ -33,10 +33,10 @@ $phone=$_SESSION['phonenumber'];
     
     
     <div class="content">
-      <h1>Welcome <?php echo $fname. " ". $mname ." ". $lname ." " . $faname?>!</h1>
-      <h2>Your Email is : <?php echo $email ?></h2>
+      <h1>Welcome <?php echo  $_SESSION["user_fname"]. " ". $_SESSION["user_mname"] ." ".  $_SESSION["user_lname"] ." " .  $_SESSION["user_faname"]?>!</h1>
+      <h2>Your Email is : <?php echo  $_SESSION["userEmail"] ?></h2>
       <br>
-      <h2> Your Phone Number is: <?php echo $phone?> </h2>
+      <h2> Your Phone Number is: <?php echo  $_SESSION["userMobile"]?> </h2>
      
     </div>
     

@@ -7,23 +7,34 @@ if(isset($_POST['submit'])){
 
     $loginEmail=$_POST['email'];
     $loginPass=$_POST['password'];
-    $email=$_SESSION['email'];
-    $pass=$_SESSION['password'];
+    // $email=$_SESSION['email'];
+    // $pass=$_SESSION['password'];
+    
+    foreach ($_SESSION["usersData"] as $key => $value){
+if (($loginPass == $value['password']) && ($loginEmail == $value['email'])){
 
+    $_SESSION["userEmail"]= $value["email"];
+    $_SESSION["user_fname"]= $value['firstname'];
+    $_SESSION["user_mname"]= $value['middlename'];
+    $_SESSION["user_lname"]= $value['lastname'];
+    $_SESSION["user_faname"]= $value['familyname'];
+    $_SESSION["userMobile"]= $value['phonenumber'];
+    $_SESSION["usersData"][$key]["Last-Login-Date"]= date("d-m-Y - h:ia");
+    $_SESSION["usersData"];
 
-if (($loginPass == $pass) && ($loginEmail == $email)){
     header ("location: welcome.php");
    
     
 }
-elseif($loginPass !== $pass) {
+elseif($loginPass !== $value['password']) {
     $PasswordErr="<span style=' color:red'>Incorrect Password</span><br>";
 
 
 
 }
-elseif($loginEmail !== $email){
+elseif($loginEmail !== $value['email']){
     $EmailERR="<span style=' color:red'>Incorrect Email</span><br>";
+}
 };
 
 

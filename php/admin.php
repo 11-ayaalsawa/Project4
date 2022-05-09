@@ -2,13 +2,13 @@
 session_start();
 
 
-setCookie('FirstName', date("m/d/y H:ia "), 60*24*60*60+time());
+// setCookie('FirstName', date("m/d/y H:ia "), 60*24*60*60+time());
 
-$fname=$_SESSION['firstname'];
-$faname=$_SESSION['familyname'];
-$email=$_SESSION['email'];
-$pass=$_SESSION['password'];
-$datecCreated= $_SESSION['date_create'];
+// $fname=$_SESSION['firstname'];
+// $faname=$_SESSION['familyname'];
+// $email=$_SESSION['email'];
+// $pass=$_SESSION['password'];
+// $datecCreated= $_SESSION['date_create'];
 
 ?>
 
@@ -25,7 +25,7 @@ $datecCreated= $_SESSION['date_create'];
    
 <body>
    
-<h1> Admin Information </h1>
+<h1> Admin page </h1>
 <table id="data">
 
   <tr>
@@ -36,17 +36,22 @@ $datecCreated= $_SESSION['date_create'];
     <th>Date created</th>
     <th>Last login</th>
   </tr>
-  <tr>
-    <td>1</td>
-    <td><?php echo $fname." ".$faname ?></td>
-    <td><?php echo $email ?></td>
-    <td> <?php echo $pass ?></td>
-    <td><?php echo $datecCreated ?></td>
-    <td><?php echo $_COOKIE['FirstName'];?></td>
-    
-    
-  </tr>
 
+  <?php
+        $id= 1;
+        foreach ($_SESSION["usersData"] as $value) {
+            
+            echo "<tr>
+                    <td>".$id."</td>
+                    <td>".$value['firstname']."</td>
+                    <td>".$value['email']."</td>
+                    <td>".$value['password']."</td>
+                    <td>".$value['date_create']."</td>
+                    <td>".$value["Last-Login-Date"]."</td>
+                </tr>";
+            $id++;
+        }
+        ?>
  
 </table>
 </body>
